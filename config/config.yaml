@@ -1,0 +1,67 @@
+# Configurazione Camera di Commercio Marche Scraper
+
+# API Configuration
+api:
+  base_url: "https://opendata.marche.camcom.it"
+  timeout: 30
+  max_retries: 3
+  retry_delay: 2
+  user_agent: "CamcomScraper/1.0 (Python)"
+
+# Extraction Parameters
+extraction:
+  default_start_year: 2009
+  default_end_year: 2025
+  batch_size: 100
+  delay_between_requests: 1.0  # seconds
+
+# Output Configuration
+output:
+  csv_directory: "data/processed"
+  raw_directory: "data/raw"
+  cache_directory: "data/cache"
+  filename_pattern: "{provincia}_{anno_inizio}_{anno_fine}.csv"
+  
+  # CSV options
+  csv_encoding: "utf-8"
+  csv_separator: ","
+  csv_decimal: "."
+  
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: "logs/scraper.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  max_bytes: 10485760  # 10 MB
+  backup_count: 5
+
+# Cache Configuration
+cache:
+  enabled: true
+  ttl: 86400  # Time to live in seconds (24 hours)
+  max_size: 1073741824  # Max cache size in bytes (1 GB)
+
+# Data Processing
+processing:
+  # Settori ATECO da includere (vuoto = tutti)
+  include_sectors: []
+  
+  # Forme giuridiche da includere (vuoto = tutte)
+  include_legal_forms: []
+  
+  # Calcola automaticamente statistiche
+  calculate_statistics: true
+  
+  # Calcola tassi di crescita
+  calculate_growth_rates: true
+
+# Advanced Settings
+advanced:
+  # Numero massimo di thread per operazioni parallele
+  max_workers: 4
+  
+  # Dimensione del buffer per le operazioni di I/O
+  buffer_size: 8192
+  
+  # Abilita compressione per i file di cache
+  compress_cache: false

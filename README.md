@@ -64,9 +64,8 @@ camcom-marche-scraper/
 ├── src/
 │   ├── __init__.py
 │   ├── main.py                 # Entry point dell'applicazione
+│   ├── grafico.py              # Per costruire un line chart
 │   ├── scraper.py              # Logica principale di scraping
-│   ├── api_client.py           # Client per le API JSON-stat
-│   ├── data_processor.py       # Elaborazione e pulizia dati
 │   └── utils.py                # Funzioni di utilità
 │
 ├── config/
@@ -74,59 +73,17 @@ camcom-marche-scraper/
 │   └── provinces.json          # Mapping province/codici
 │
 ├── data/
-│   ├── raw/                    # Dati grezzi estratti
 │   ├── processed/              # Dati elaborati
 │   └── cache/                  # Cache delle richieste
 │
 ├── tests/
 │   ├── __init__.py
 │   ├── test_scraper.py
-│   ├── test_api_client.py
-│   └── test_data_processor.py
-│
-├── docs/
-│   ├── API.md                  # Documentazione API
-│   └── EXAMPLES.md             # Esempi d'uso
 │
 ├── .gitignore
-├── .env.example
 ├── requirements.txt
-├── requirements-dev.txt
-├── setup.py
 ├── LICENSE
 └── README.md
-```
-
-## Configurazione
-
-Crea un file `config/config.yaml` personalizzato:
-
-```yaml
-# Configurazione base
-api:
-  base_url: "https://opendata.marche.camcom.it"
-  timeout: 30
-  max_retries: 3
-  retry_delay: 2
-
-# Parametri di estrazione
-extraction:
-  default_start_year: 2009
-  default_end_year: 2025
-  batch_size: 100
-
-# Percorsi output
-output:
-  csv_directory: "data/processed"
-  raw_directory: "data/raw"
-  cache_directory: "data/cache"
-  filename_pattern: "{provincia}_{anno_inizio}_{anno_fine}.csv"
-
-# Logging
-logging:
-  level: "INFO"
-  file: "logs/scraper.log"
-  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 ```
 
 ## Output dei Dati

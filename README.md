@@ -2,15 +2,12 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 Scraper Python per l'estrazione automatica dei dati sulle imprese attive dal portale [Open Data Explorer](https://opendata.marche.camcom.it/) della Camera di Commercio delle Marche.
 
 ## Descrizione
 
-Questo progetto permette di estrarre in modo automatizzato i dati statistici sulle imprese attive nelle province italiane, con particolare focus sulla provincia di Venezia, per il periodo 2009-2025. I dati vengono salvati in formato CSV per analisi successive.
-
-Il portale utilizza **JSON-stat**, uno standard internazionale per la disseminazione di dati statistici, che viene interrogato tramite le API pubbliche.
+Questo progetto permette di estrarre in modo automatizzato i dati statistici sulle imprese attive nelle province italiane. I dati vengono salvati in formato CSV per analisi successive.
 
 ## Funzionalità
 
@@ -105,7 +102,7 @@ Venezia,2024,Q4,C,Società di capitali,15234,2.3
 - `num_imprese_attive`: Numero di imprese attive
 - `variazione_annuale`: Variazione percentuale anno su anno
 
-## 📄 Licenza
+## Licenza
 
 Questo progetto è rilasciato sotto licenza MIT. Vedi il file [LICENSE](LICENSE) per i dettagli.
 
